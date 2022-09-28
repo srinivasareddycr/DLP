@@ -1,11 +1,11 @@
 package com.admin.model;
 
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 
 @Entity
 public class PatientDetails {
@@ -18,10 +18,24 @@ public class PatientDetails {
 	private String patientName;
 	private String address;
 	private String dob;
-	private String  emailId;
+	private String emailId;
 	private String phoneNumber;
 	private String drugId;
 	private String drugName;
+	
+	
+	private  String status ="Inducted";
+	
+	
+	
+	
+	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -70,17 +84,18 @@ public class PatientDetails {
 	public void setDrugName(String drugName) {
 		this.drugName = drugName;
 	}
-	public PatientDetails(Integer id, String patientName, String address, String dob, String emailId, String phoneNumber,
-			String drugId, String drugName) {
+	public PatientDetails( String address, String dob, String drugId,String drugName,String emailId,  
+			String patientName, String phoneNumber) {
 		super();
-		this.id = id;
-		this.patientName = patientName;
 		this.address = address;
 		this.dob = dob;
-		this.emailId = emailId;
-		this.phoneNumber = phoneNumber;
 		this.drugId = drugId;
 		this.drugName = drugName;
+		this.emailId = emailId;
+		this.patientName = patientName;
+		this.phoneNumber = phoneNumber;
+
+		
 	}
 	public PatientDetails() {
 		super();

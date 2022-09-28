@@ -21,10 +21,11 @@ public class CSVService {
 
   public void save(MultipartFile file) {
     try {
-    	System.out.println("!!!!!!!!!!!!!!!!1");
+    	
       List<PatientDetails> tutorials = CSVHelper.csvToTutorials(file.getInputStream());
       
       repository.saveAll(tutorials);
+     
     } catch (IOException e) {
     	System.out.println(e.getMessage());
       throw new RuntimeException("fail to store csv data: " + e.getMessage());
